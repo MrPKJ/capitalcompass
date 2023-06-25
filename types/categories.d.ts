@@ -1,4 +1,5 @@
 type category = {
+  id: string;
   title: string;
   description: string;
 };
