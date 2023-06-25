@@ -1,25 +1,37 @@
+// Components
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import "./globals.css";
-import { getWeather } from "@/utils/weather";
+
+// Types
 import type { weather } from "@/types/weather";
-import { getCategories } from "@/utils/sanity";
+import type { categories } from "@/types/categories";
+
+// Contents
 import { navbar } from "@/contents/navbar";
 import { header } from "@/contents/header";
 import { footer } from "@/contents/footer";
-import type { categories } from "@/types/categories";
 
+// Utilities
+import { getCategories } from "@/utils/categories";
+import { getWeather } from "@/utils/weather";
+
+// GLobal CSS
+import "./globals.css";
+
+// MetaData
 export const metadata = {
   title: "CapitalCompass",
   description: "Right Location For Financial News",
 };
 
+// RootLayout
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // Fetched Data
   const categories: categories = await getCategories();
   const weather: weather = await getWeather();
 
