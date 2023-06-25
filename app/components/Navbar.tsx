@@ -77,8 +77,11 @@ export default function Navbar(props: Navbar) {
                 .filter((item, index) => index >= 3)
                 .map((category: category) => {
                   return (
-                    <Link href={`/${category.title}`}>
-                      <p className="w-28 text-center cursor-pointer">
+                    <Link href={`/${category.title}`} key={category.id}>
+                      <p
+                        className="w-40 text-center cursor-pointer"
+                        key={category.id}
+                      >
                         {category.title}
                       </p>
                     </Link>
